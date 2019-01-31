@@ -3,7 +3,7 @@ System Apocalipse
 /*Se supone que el fin del juego es enseñar a programar orientado a objetos, entonces la idea básica que tengo es que el protagonista sea un programador que por cosas del azar termina encerrado dentro de un computador donde este todo en caos por un virus y los enemigos de la programación que destruyeron los pilares que sostienen el mundo informático que serían los pilares de la poo, herencia, polimorfismo, etc.
 La idea del juego seria recorrer el pc que serían varios mundos y tendría que ir reuniendo las partes de un programa hecho con poo con el cual se enfrenta al final al virus y así :3*/
 
-System Apocalipse es un juego RPG. Su propósito inicial, es enseñar el paradigma orientado a objetos.
+System Apocalipse es un juego. Su propósito inicial, es entretener.
 La historia inicial consiste 
 Año 2142. IBG (International Bussiness Games) es la empresa tecnológica más grande de la era, habitando cada parte del mundo: desde electrodomésticos hasta computadoras cuánticas. En su afán por monopolizar la industria de los videojuegos, implementa un virus secreto mediante una actualización de sistema (aprovechando que poseen los SO’s  más usados).
 //descripción del virus
