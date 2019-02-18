@@ -8,7 +8,7 @@ public class Ventana extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
         add(new Escenario());
         setTitle("System Apocalipse");
-        setSize(1295, 821);
+        setSize(1295, 820);
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);

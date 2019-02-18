@@ -89,7 +89,7 @@ public class Phill extends Personaje {
         if (key == KeyEvent.VK_DOWN) {
             dy = 0;
         }
-                if(key == KeyEvent.VK_SPACE){
+                if(key == KeyEvent.VK_ENTER){
             for(int i=0; i<4; i++){
                 Imagen = ataque[i];
             }   
