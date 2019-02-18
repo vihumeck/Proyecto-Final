@@ -7,7 +7,10 @@ import javax.swing.ImageIcon;
 public class Phill extends Personaje {
 
     int cont = 0;
-    
+    Image[] ataque = {new ImageIcon(getClass().getResource("../Recursos/ataque1.png")).getImage(),
+        new ImageIcon(getClass().getResource("../Recursos/ataque2.png")).getImage(),
+        new ImageIcon(getClass().getResource("../Recursos/ataque3.png")).getImage(),
+        new ImageIcon(getClass().getResource("../Recursos/ataque4.png")).getImage()};
     Image[][] imagenes = {{new ImageIcon(getClass().getResource("../Recursos/posicion00.png")).getImage(),
             new ImageIcon(getClass().getResource("../Recursos/posicion01.png")).getImage(),
             new ImageIcon(getClass().getResource("../Recursos/posicion02.png")).getImage(),
@@ -30,6 +33,7 @@ public class Phill extends Personaje {
         };
 
     public Phill() {
+        numeroVidas = 3;
         x = 40;
         y = 60;
     }
@@ -63,6 +67,7 @@ public class Phill extends Personaje {
             cont = cont % 4;
             Imagen = imagenes[0][cont];
         }
+        
     }
 
     @Override
@@ -83,6 +88,21 @@ public class Phill extends Personaje {
 
         if (key == KeyEvent.VK_DOWN) {
             dy = 0;
+        }
+                if(key == KeyEvent.VK_SPACE){
+            for(int i=0; i<4; i++){
+                Imagen = ataque[i];
+            }   
+        }
+
+    }
+    public void keyTyped(KeyEvent e){
+        
+        int key = e.getKeyCode();
+        if(key == KeyEvent.VK_SPACE){
+            for(int i=0; i<4; i++){
+                Imagen = ataque[i];
+            }   
         }
     }
 

@@ -11,7 +11,7 @@ public abstract class  Personaje {
     int y;
     String UbicacionImagen;
     Image Imagen;
-    
+    int numeroVidas = 3;
     
     public void mover(){
         if (dx > 0 && x <= 1250) {

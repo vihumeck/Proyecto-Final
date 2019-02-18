@@ -17,41 +17,59 @@ import javax.swing.JButton;
 public class Escenario extends JPanel implements ActionListener{
 
     private final Phill phill;
-    private final Malo Golb;    
+    private final Malo Golb;
+    private componenteGrafico player1;
+    private componenteGrafico player2;
+    private componenteGrafico vidap1;
+    private componenteGrafico vidap2;
     private final Timer timer;
     private JButton boton;
     private Image escena;
     private TAdapter tadapter;
-    private Fondo fondo1, fondo2;
-    private boolean juegoActivo = false;
+    private Fondo portada, fondoJuego;
+    private boolean juegoActivo = false;    
     public Escenario(){
         tadapter = new TAdapter();
         boton = new JButton();
+        setFocusable(true);
+        setDoubleBuffered(true); 
+        this.addKeyListener(tadapter);
+        
+        
         try {
             Image img = ImageIO.read(getClass().getResource("../Recursos/boton.png"));
             boton.setIcon(new ImageIcon(img));
         } catch (Exception ex) {
             System.out.println(ex);
-        }    
-        //boton.setBounds(1200, 50, 300, 300);
-        fondo1 = new Fondo("../Recursos/portada.png");
-        fondo2 = new Fondo("../Recursos/fondo.png");
-        setFocusable(true);
-        setDoubleBuffered(true); 
-        addKeyListener(tadapter);
+        }
+        
+        portada = new Fondo("../Recursos/portada.png");
+        fondoJuego = new Fondo("../Recursos/fondo.png");
+        
+        
         phill = new Phill();
         Golb = new Malo();
+        player1 = new componenteGrafico("../Recursos/player1.png", 20, 20);        
+        vidap1 = new componenteGrafico("../Recursos/3vidas.png", 20, 70);
+        player2 = new componenteGrafico("../Recursos/player2.png", 500, 20);
+        vidap2 = new componenteGrafico("../Recursos/3vidas.png",500 ,70);
+        
         timer = new Timer(5, this);
         timer.start(); 
-        jugando();
+        jugandoActualizarr();
         boton.addActionListener(tadapter);
     }
-    public void jugando(){
+    public void jugandoActualizarr(){
         if(juegoActivo){
            remove(boton);
-           escena = fondo1.getImagen();           
-        }else{
-           escena = fondo2.getImagen();
+           escena = fondoJuego.getImagen();
+           if(phill.numeroVidas==1)vidap1.setImagen("../Recursos/1vida.png");
+           if(phill.numeroVidas==2)vidap1.setImagen("../Recursos/2vidas.png");
+           if(Golb.numeroVidas==1)vidap2.setImagen("../Recursos/1vida.png");
+           if(Golb.numeroVidas==2)vidap2.setImagen("../Recursos/2vidas.png");
+        }
+        else{
+           escena = portada.getImagen();
            add(boton);
            boton.setEnabled(true);
            boton.setVisible(true);
@@ -60,6 +78,7 @@ public class Escenario extends JPanel implements ActionListener{
     }
     @Override
     public void paint (Graphics g){
+        jugandoActualizarr();
         super.paint(g);
         Graphics2D g2d = (Graphics2D)g;
         //g2d.drawImage(escena, 0 , 0 , this);
@@ -67,7 +86,15 @@ public class Escenario extends JPanel implements ActionListener{
             g2d.drawImage(escena, 0 , 0 , this);
             g2d.drawImage(phill.getImagen(), phill.getX(), phill.getY(), this);
             g2d.drawImage(Golb.getImagen(), Golb.getX(), Golb.getY(), this);
-        }//else debería mostrar la pantalla de inicio
+            g2d.drawImage(player1.getImagen(),player1.getPosX(),player2.getPosY(),this);
+            g2d.drawImage(vidap1.getImagen(),vidap1.getPosX(),vidap1.getPosY(),this);
+            g2d.drawImage(player2.getImagen(),player2.getPosX(),player2.getPosY(),this);
+            g2d.drawImage(vidap2.getImagen(),vidap2.getPosX(),vidap2.getPosY(),this);
+            
+            
+        }else{
+            g2d.drawImage(escena, 0 , 0 , this);
+        }
         Toolkit.getDefaultToolkit().sync();
         g.dispose();
     }

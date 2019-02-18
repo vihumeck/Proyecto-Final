@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 public class Malo extends Personaje {
     
     public Malo() {
+        numeroVidas = 1;
         UbicacionImagen = "../Recursos/GOBpequeño.png";
         ImageIcon img = new ImageIcon(this.getClass().getResource(UbicacionImagen));
         Imagen = img.getImage();
