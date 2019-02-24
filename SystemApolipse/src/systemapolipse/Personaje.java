@@ -11,6 +11,7 @@ public abstract class  Personaje {
     int y;
     String UbicacionImagen;
     Image Imagen;
+    int cont = 0;
     int numeroVidas = 3;
     
     public void mover(){

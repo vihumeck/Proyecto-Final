@@ -17,7 +17,7 @@ import javax.swing.JButton;
 public class Escenario extends JPanel implements ActionListener {
 
     private final Phill phill;
-    private final Malo Golb;
+    private final Steve steve;
     private componenteGrafico player1;
     private componenteGrafico player2;
     private componenteGrafico vidap1;
@@ -47,13 +47,13 @@ public class Escenario extends JPanel implements ActionListener {
         fondoJuego = new Fondo("../Recursos/fondo.png");
 
         phill = new Phill();
-        Golb = new Malo();
+        steve = new Steve();
         player1 = new componenteGrafico("../Recursos/player1.png", 20, 20);
         vidap1 = new componenteGrafico("../Recursos/3vidas.png", 20, 70);
         player2 = new componenteGrafico("../Recursos/player2.png", 500, 20);
         vidap2 = new componenteGrafico("../Recursos/3vidas.png", 500, 70);
 
-        timer = new Timer(5, this);
+        timer = new Timer(10, this);
         timer.start();
         jugandoActualizarr();
         boton.addActionListener(tadapter);
@@ -69,17 +69,17 @@ public class Escenario extends JPanel implements ActionListener {
             if (phill.numeroVidas == 2) {
                 vidap1.setImagen("../Recursos/2vidas.png");
             }
-            if (Golb.numeroVidas == 1) {
+            if (steve.numeroVidas == 1) {
                 vidap2.setImagen("../Recursos/1vida.png");
             }
-            if (Golb.numeroVidas == 2) {
+            if (steve.numeroVidas == 2) {
                 vidap2.setImagen("../Recursos/2vidas.png");
             }
         } else {
             escena = portada.getImagen();
             add(boton);
 
-            boton.setBounds(475, 635, boton.getIcon().getIconWidth(), boton.getIcon().getIconHeight());
+            boton.setBounds(575, 635, boton.getIcon().getIconWidth(), boton.getIcon().getIconHeight());
             boton.setEnabled(true);
             boton.setVisible(true);
             
@@ -96,7 +96,7 @@ public class Escenario extends JPanel implements ActionListener {
         if (juegoActivo) {
             g2d.drawImage(escena, 0, 0, this);
             g2d.drawImage(phill.getImagen(), phill.getX(), phill.getY(), this);
-            g2d.drawImage(Golb.getImagen(), Golb.getX(), Golb.getY(), this);
+            g2d.drawImage(steve.getImagen(), steve.getX(), steve.getY(), this);
             g2d.drawImage(player1.getImagen(), player1.getPosX(), player2.getPosY(), this);
             g2d.drawImage(vidap1.getImagen(), vidap1.getPosX(), vidap1.getPosY(), this);
             g2d.drawImage(player2.getImagen(), player2.getPosX(), player2.getPosY(), this);
@@ -117,14 +117,14 @@ public class Escenario extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         phill.mover();
-        Golb.mover();
+        steve.mover();
         colision();
         repaint();
     }
 
     public void colision() {
-        if (phill.getX() >= Golb.getX() - 50 && phill.getX() <= Golb.getX() + 50) {
-            if (phill.getY() >= Golb.getY() - 60 && phill.getY() <= Golb.getY() + 60) {
+        if (phill.getX() >= steve.getX() - 50 && phill.getX() <= steve.getX() + 50) {
+            if (phill.getY() >= steve.getY() - 60 && phill.getY() <= steve.getY() + 60) {
                 System.out.println("Se tocaron los personajes");
             }
         }
@@ -135,13 +135,13 @@ public class Escenario extends JPanel implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
             phill.keyReleased(e);
-            Golb.keyReleased(e);
+            steve.keyReleased(e);
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
             phill.keyPressed(e);
-            Golb.keyPressed(e);
+            steve.keyPressed(e);
         }
 
         public void actionPerformed(ActionEvent e) {

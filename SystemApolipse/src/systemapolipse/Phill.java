@@ -5,37 +5,53 @@ import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
 public class Phill extends Personaje {
-
-    int cont = 0;
-    Image[] ataque = {new ImageIcon(getClass().getResource("../Recursos/ataque1.png")).getImage(),
-        new ImageIcon(getClass().getResource("../Recursos/ataque2.png")).getImage(),
-        new ImageIcon(getClass().getResource("../Recursos/ataque3.png")).getImage(),
-        new ImageIcon(getClass().getResource("../Recursos/ataque4.png")).getImage()};
-    Image[][] imagenes = {{new ImageIcon(getClass().getResource("../Recursos/posicion00.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion01.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion02.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion03.png")).getImage()
+    
+    Image[][] ataque = {{new ImageIcon(getClass().getResource("../Phill/Ataque0.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque1.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque2.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque3.png")).getImage()
         },
-        {new ImageIcon(getClass().getResource("../Recursos/posicion04.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion05.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion06.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion07.png")).getImage()
+        {new ImageIcon(getClass().getResource("../Phill/Ataque4.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque5.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque6.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque7.png")).getImage()
         },
-        {new ImageIcon(getClass().getResource("../Recursos/posicion08.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion09.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion10.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion11.png")).getImage()
+        {new ImageIcon(getClass().getResource("../Phill/Ataque8.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque9.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque10.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque11.png")).getImage()
         },
-        {new ImageIcon(getClass().getResource("../Recursos/posicion12.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion13.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion14.png")).getImage(),
-            new ImageIcon(getClass().getResource("../Recursos/posicion15.png")).getImage(),}
+        {new ImageIcon(getClass().getResource("../Phill/Ataque12.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque13.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque14.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/Ataque15.png")).getImage(),}
         };
+    
+    Image[][] imagenes = {{new ImageIcon(getClass().getResource("../Phill/posicion0.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion1.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion2.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion3.png")).getImage()
+        },
+        {new ImageIcon(getClass().getResource("../Phill/posicion4.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion5.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion6.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion7.png")).getImage()
+        },
+        {new ImageIcon(getClass().getResource("../Phill/posicion8.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion9.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion10.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion11.png")).getImage()
+        },
+        {new ImageIcon(getClass().getResource("../Phill/posicion12.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion13.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion14.png")).getImage(),
+            new ImageIcon(getClass().getResource("../Phill/posicion15.png")).getImage(),}
+        };
+    
 
     public Phill() {
-        numeroVidas = 3;
-        x = 40;
-        y = 60;
+        x = 250;
+        y = 410;   
     }
 
     @Override
@@ -90,9 +106,9 @@ public class Phill extends Personaje {
             dy = 0;
         }
                 if(key == KeyEvent.VK_ENTER){
-            for(int i=0; i<4; i++){
+            /*for(int i=0; i<4; i++){
                 Imagen = ataque[i];
-            }   
+            }*/   
         }
 
     }
@@ -100,10 +116,14 @@ public class Phill extends Personaje {
         
         int key = e.getKeyCode();
         if(key == KeyEvent.VK_SPACE){
-            for(int i=0; i<4; i++){
+           /* for(int i=0; i<4; i++){
                 Imagen = ataque[i];
-            }   
+            }   */
         }
+    }
+
+    private void getImage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
