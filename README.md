@@ -1,4 +1,7 @@
 # Proyecto-Final
+
+link proyecto final https://drive.google.com/drive/folders/1RtjXHAQZ2fHLYLeUCof3JwI2DPDPspBZ?usp=sharing
+
 System Apocalipse
 /*Se supone que el fin del juego es enseñar a programar orientado a objetos, entonces la idea básica que tengo es que el protagonista sea un programador que por cosas del azar termina encerrado dentro de un computador donde este todo en caos por un virus y los enemigos de la programación que destruyeron los pilares que sostienen el mundo informático que serían los pilares de la poo, herencia, polimorfismo, etc.
 La idea del juego seria recorrer el pc que serían varios mundos y tendría que ir reuniendo las partes de un programa hecho con poo con el cual se enfrenta al final al virus y así :3*/
